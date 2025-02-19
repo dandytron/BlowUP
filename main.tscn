@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://nuh2lic3sd55"]
+[gd_scene load_steps=3 format=3 uid="uid://nuh2lic3sd55"]
+
+[ext_resource type="PackedScene" uid="uid://nii0ee7sq6rj" path="res://wall.tscn" id="1_85qi2"]
+[ext_resource type="PackedScene" uid="uid://cuk1tj6fqa8sw" path="res://player.tscn" id="2_xsinl"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_85qi2")]
+position = Vector2(970, 1288)
+rotation = 1.5708
+
+[node name="RightWall" parent="." instance=ExtResource("1_85qi2")]
+position = Vector2(2008, 716)
+
+[node name="LeftWall" parent="." instance=ExtResource("1_85qi2")]
+position = Vector2(-83, 720)
+
+[node name="John" parent="." instance=ExtResource("2_xsinl")]
+position = Vector2(988, 907)

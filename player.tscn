@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuk1tj6fqa8sw"]
+
+[ext_resource type="Script" path="res://scripts/rigid_body_2d.gd" id="1_5023y"]
+[ext_resource type="Texture2D" uid="uid://bcv8e7r4c07mq" path="res://icon.svg" id="2_i23bk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eldub"]
+bounce = 0.21
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4qqw"]
+radius = 70.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_eldub")
+gravity_scale = 0.8
+script = ExtResource("1_5023y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.1377, 1.12793)
+texture = ExtResource("2_i23bk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e4qqw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
