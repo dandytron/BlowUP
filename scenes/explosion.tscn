@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1e60olyac7l5"]
 
-[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_jdsbi"]
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_sucsq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cs24i"]
 
@@ -9,4 +9,4 @@ modulate = Color(0.825946, 0.555674, 0.632499, 1)
 position = Vector2(39.75, 12)
 scale = Vector2(80.5, 72)
 texture = SubResource("CanvasTexture_cs24i")
-script = ExtResource("1_jdsbi")
+script = ExtResource("1_sucsq")
