@@ -10,16 +10,6 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6tvhn")
 
-[node name="Floor" parent="." instance=ExtResource("1_haspb")]
-position = Vector2(970, 1288)
-rotation = 1.5708
-
-[node name="RightWall" parent="." instance=ExtResource("1_haspb")]
-position = Vector2(2095, -910)
-
-[node name="LeftWall" parent="." instance=ExtResource("1_haspb")]
-position = Vector2(-148, -909)
-
 [node name="John" parent="." instance=ExtResource("2_8ocxl")]
 unique_name_in_owner = true
 position = Vector2(988, 907)
@@ -39,3 +29,15 @@ position = Vector2(386, 947)
 
 [node name="Spike2" parent="Node" instance=ExtResource("4_hkkj7")]
 position = Vector2(1652, -382)
+
+[node name="Tower" type="Node" parent="."]
+
+[node name="Floor" parent="Tower" instance=ExtResource("1_haspb")]
+position = Vector2(970, 1288)
+rotation = 1.5708
+
+[node name="RightWall" parent="Tower" instance=ExtResource("1_haspb")]
+position = Vector2(2095, -910)
+
+[node name="LeftWall" parent="Tower" instance=ExtResource("1_haspb")]
+position = Vector2(-148, -909)
