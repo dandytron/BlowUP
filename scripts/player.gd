@@ -1,4 +1,4 @@
-class_name MainCharacter
+class_name Player
 extends RigidBody2D
 
 
