@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://nuh2lic3sd55"]
+[gd_scene load_steps=7 format=3 uid="uid://nuh2lic3sd55"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6tvhn"]
 [ext_resource type="PackedScene" uid="uid://nii0ee7sq6rj" path="res://scenes/wall.tscn" id="1_haspb"]
 [ext_resource type="PackedScene" uid="uid://cuk1tj6fqa8sw" path="res://scenes/player.tscn" id="2_8ocxl"]
+[ext_resource type="PackedScene" uid="uid://b0pdbuous4qjc" path="res://scenes/spike.tscn" id="4_hkkj7"]
 [ext_resource type="Script" path="res://scripts/explosion_layer.gd" id="4_i8u82"]
 [ext_resource type="PackedScene" uid="uid://dnnm0e0oqa5vp" path="res://scenes/platform.tscn" id="5_y4gxr"]
 
@@ -29,4 +30,12 @@ script = ExtResource("4_i8u82")
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("5_y4gxr")]
-position = Vector2(447, -29)
+position = Vector2(451, 128)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Spike" parent="Node" instance=ExtResource("4_hkkj7")]
+position = Vector2(386, 947)
+
+[node name="Spike2" parent="Node" instance=ExtResource("4_hkkj7")]
+position = Vector2(1652, -382)
