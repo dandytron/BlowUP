@@ -9,7 +9,7 @@ bounce = 0.21
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vt40j"]
 size = Vector2(135, 135)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="MainCharacter" type="RigidBody2D"]
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_eldub")
 gravity_scale = 0.8
