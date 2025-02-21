@@ -2,7 +2,7 @@ extends Node2D
 
 var boom = preload("res://scenes/explosion.tscn")
 
-func create_explosion(mousePosition):
+func create_explosion(mousePosition: Vector2):
 	var newExplosion := boom.instantiate()
 	newExplosion.set_position(mousePosition)
 	add_child(newExplosion)
@@ -12,4 +12,3 @@ func create_explosion(mousePosition):
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("LeftMouseClick"):
 		create_explosion(get_global_mouse_position())
-
