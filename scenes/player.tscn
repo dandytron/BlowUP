@@ -7,7 +7,7 @@
 bounce = 0.21
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vt40j"]
-size = Vector2(135, 135)
+size = Vector2(143, 144)
 
 [node name="Player" type="RigidBody2D"]
 mass = 0.1
@@ -17,13 +17,13 @@ center_of_mass_mode = 1
 script = ExtResource("1_5ma2t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -100
-limit_right = 2020
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.1377, 1.12793)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_i23bk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_vt40j")

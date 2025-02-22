@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nuh2lic3sd55"]
+[gd_scene load_steps=9 format=3 uid="uid://nuh2lic3sd55"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6tvhn"]
 [ext_resource type="PackedScene" uid="uid://nii0ee7sq6rj" path="res://scenes/wall.tscn" id="1_haspb"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b0pdbuous4qjc" path="res://scenes/spike.tscn" id="4_hkkj7"]
 [ext_resource type="Script" path="res://scripts/explosion_layer.gd" id="4_i8u82"]
 [ext_resource type="PackedScene" uid="uid://dnnm0e0oqa5vp" path="res://scenes/platform.tscn" id="5_y4gxr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdaux"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3souk"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6tvhn")
@@ -20,7 +25,7 @@ script = ExtResource("4_i8u82")
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("5_y4gxr")]
-position = Vector2(451, 128)
+position = Vector2(436, 294)
 
 [node name="Node" type="Node" parent="."]
 
@@ -32,12 +37,29 @@ position = Vector2(1652, -382)
 
 [node name="Tower" type="Node" parent="."]
 
-[node name="Floor" parent="Tower" instance=ExtResource("1_haspb")]
-position = Vector2(970, 1288)
-rotation = 1.5708
+[node name="LeftWall" parent="Tower" instance=ExtResource("1_haspb")]
+position = Vector2(-148, -908)
 
 [node name="RightWall" parent="Tower" instance=ExtResource("1_haspb")]
 position = Vector2(2095, -910)
 
-[node name="LeftWall" parent="Tower" instance=ExtResource("1_haspb")]
-position = Vector2(-148, -909)
+[node name="Ground" parent="Tower" instance=ExtResource("1_haspb")]
+position = Vector2(1069, 1683)
+rotation = 1.5708
+scale = Vector2(6, 6)
+
+[node name="WorldBoundries" type="Node" parent="."]
+
+[node name="LeftBounds" type="StaticBody2D" parent="WorldBoundries"]
+position = Vector2(-2, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundries/LeftBounds"]
+position = Vector2(48, 1091)
+shape = SubResource("WorldBoundaryShape2D_mdaux")
+
+[node name="RightBounds" type="StaticBody2D" parent="WorldBoundries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundries/RightBounds"]
+position = Vector2(1900, 1071)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_3souk")
