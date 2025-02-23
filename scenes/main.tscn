@@ -41,6 +41,12 @@ script = ExtResource("4_i8u82")
 [node name="Platform" parent="Platforms" instance=ExtResource("5_y4gxr")]
 position = Vector2(436, 294)
 
+[node name="Platform2" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(1491, -831)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(953, -2036)
+
 [node name="Spikes" type="Node2D" parent="."]
 
 [node name="Spike" parent="Spikes" instance=ExtResource("4_hkkj7")]
@@ -77,3 +83,13 @@ shape = SubResource("WorldBoundaryShape2D_mdaux")
 position = Vector2(1900, 1071)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_3souk")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+offset_left = 50.0
+offset_top = 1151.0
+offset_right = 2050.0
+offset_bottom = 1201.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Left click to explod bombs. 'BlowUp' to reach the top! Don't go into the red."
