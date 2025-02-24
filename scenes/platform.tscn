@@ -1,17 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnnm0e0oqa5vp"]
+[gd_scene load_steps=5 format=3 uid="uid://dnnm0e0oqa5vp"]
+
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_65f26"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5stoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wvaq"]
 size = Vector2(199, 49)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aduy"]
+size = Vector2(369.5, 1.5)
+
 [node name="Platform" type="AnimatableBody2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_65f26")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(400, 100)
 texture = SubResource("CanvasTexture_5stoe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_1wvaq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.75, -49.25)
+shape = SubResource("RectangleShape2D_1aduy")

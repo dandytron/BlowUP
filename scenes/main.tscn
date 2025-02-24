@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://nuh2lic3sd55"]
+[gd_scene load_steps=11 format=3 uid="uid://nuh2lic3sd55"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6tvhn"]
 [ext_resource type="PackedScene" uid="uid://nii0ee7sq6rj" path="res://scenes/wall.tscn" id="1_haspb"]
 [ext_resource type="PackedScene" uid="uid://cuk1tj6fqa8sw" path="res://scenes/player.tscn" id="2_8ocxl"]
+[ext_resource type="Script" path="res://scripts/megatron.gd" id="2_pkvq2"]
+[ext_resource type="Script" path="res://scripts/bombs_remaining.gd" id="3_1kvvw"]
 [ext_resource type="PackedScene" uid="uid://b0pdbuous4qjc" path="res://scenes/spike.tscn" id="4_hkkj7"]
 [ext_resource type="Script" path="res://scripts/explosion_layer.gd" id="4_i8u82"]
 [ext_resource type="PackedScene" uid="uid://dnnm0e0oqa5vp" path="res://scenes/platform.tscn" id="5_y4gxr"]
@@ -15,25 +17,48 @@ normal = Vector2(1, 0)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6tvhn")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GUICanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
+[node name="ScoreLabel" type="RichTextLabel" parent="GUICanvasLayer"]
 unique_name_in_owner = true
-offset_left = 57.0
-offset_top = 8.0
-offset_right = 657.0
-offset_bottom = 98.0
+anchors_preset = -1
+anchor_top = -0.0296296
+anchor_bottom = -0.0296296
+offset_left = 60.0
+offset_top = 47.0
+offset_right = 660.0
+offset_bottom = 103.0
 theme_override_font_sizes/normal_font_size = 32
-text = "High Score: 
+text = "High Score:
 "
 fit_content = true
-metadata/_edit_use_anchors_ = true
+
+[node name="BombsRemaining" type="RichTextLabel" parent="GUICanvasLayer"]
+unique_name_in_owner = true
+offset_left = 60.0
+offset_top = 70.0
+offset_right = 260.0
+offset_bottom = 120.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Bombs:"
+script = ExtResource("3_1kvvw")
+
+[node name="Megatron" type="RichTextLabel" parent="GUICanvasLayer"]
+unique_name_in_owner = true
+offset_left = 323.0
+offset_top = 57.0
+offset_right = 363.0
+offset_bottom = 97.0
+scale = Vector2(32.9374, 20.0159)
+fit_content = true
+script = ExtResource("2_pkvq2")
 
 [node name="John" parent="." instance=ExtResource("2_8ocxl")]
 unique_name_in_owner = true
 position = Vector2(988, 907)
 
 [node name="ExplosionLayer" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("4_i8u82")
 
 [node name="Platforms" type="Node2D" parent="."]
@@ -63,10 +88,11 @@ position = Vector2(-148, -908)
 [node name="RightWall" parent="Tower" instance=ExtResource("1_haspb")]
 position = Vector2(2095, -910)
 
-[node name="Ground" parent="Tower" instance=ExtResource("1_haspb")]
-position = Vector2(1069, 1683)
-rotation = 1.5708
-scale = Vector2(6, 6)
+[node name="Ground" parent="Tower" instance=ExtResource("5_y4gxr")]
+modulate = Color(0.06, 0.06, 0.06, 1)
+z_index = 1
+position = Vector2(1400, 1589)
+scale = Vector2(20, 10)
 
 [node name="WorldBoundries" type="Node2D" parent="."]
 
@@ -84,9 +110,9 @@ position = Vector2(1900, 1071)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_3souk")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Instructions" type="Node2D" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Instructions"]
 offset_left = 50.0
 offset_top = 1151.0
 offset_right = 2050.0
