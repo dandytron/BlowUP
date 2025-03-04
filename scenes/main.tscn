@@ -72,7 +72,25 @@ position = Vector2(1491, -831)
 [node name="Platform3" parent="Platforms" instance=ExtResource("5_y4gxr")]
 position = Vector2(953, -2036)
 
+[node name="Platform4" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(407, -3515)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(1130, -4562)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(540, -6921)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(1624, -7701)
+
 [node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spike3" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(1244, -6627)
+
+[node name="Spike4" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(326, -9938)
 
 [node name="Spike" parent="Spikes" instance=ExtResource("4_hkkj7")]
 position = Vector2(386, 947)
@@ -83,10 +101,12 @@ position = Vector2(1652, -382)
 [node name="Tower" type="Node2D" parent="."]
 
 [node name="LeftWall" parent="Tower" instance=ExtResource("1_haspb")]
-position = Vector2(-148, -908)
+position = Vector2(-148, -8888)
+scale = Vector2(2, 10)
 
 [node name="RightWall" parent="Tower" instance=ExtResource("1_haspb")]
-position = Vector2(2095, -910)
+position = Vector2(2095, -8888)
+scale = Vector2(2, 10)
 
 [node name="Ground" parent="Tower" instance=ExtResource("5_y4gxr")]
 modulate = Color(0.06, 0.06, 0.06, 1)
