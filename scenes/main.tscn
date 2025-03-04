@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://nuh2lic3sd55"]
+[gd_scene load_steps=12 format=3 uid="uid://nuh2lic3sd55"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_6tvhn"]
 [ext_resource type="PackedScene" uid="uid://nii0ee7sq6rj" path="res://scenes/wall.tscn" id="1_haspb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b0pdbuous4qjc" path="res://scenes/spike.tscn" id="4_hkkj7"]
 [ext_resource type="Script" path="res://scripts/explosion_layer.gd" id="4_i8u82"]
 [ext_resource type="PackedScene" uid="uid://dnnm0e0oqa5vp" path="res://scenes/platform.tscn" id="5_y4gxr"]
+[ext_resource type="Script" path="res://scripts/high_score.gd" id="9_oe728"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdaux"]
 normal = Vector2(1, 0)
@@ -59,7 +60,7 @@ script = ExtResource("2_pkvq2")
 
 [node name="John" parent="." instance=ExtResource("2_8ocxl")]
 unique_name_in_owner = true
-position = Vector2(988, 907)
+position = Vector2(1046, 862)
 
 [node name="ExplosionLayer" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -88,13 +89,25 @@ position = Vector2(540, -6921)
 [node name="Platform7" parent="Platforms" instance=ExtResource("5_y4gxr")]
 position = Vector2(1624, -7701)
 
+[node name="Platform8" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(629, -9718)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(581, -11365)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(464, -13351)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(479, -16311)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(249, -18501)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("5_y4gxr")]
+position = Vector2(1695, -18051)
+
 [node name="Spikes" type="Node2D" parent="."]
-
-[node name="Spike3" parent="Spikes" instance=ExtResource("4_hkkj7")]
-position = Vector2(1244, -6627)
-
-[node name="Spike4" parent="Spikes" instance=ExtResource("4_hkkj7")]
-position = Vector2(326, -9938)
 
 [node name="Spike" parent="Spikes" instance=ExtResource("4_hkkj7")]
 position = Vector2(386, 947)
@@ -102,7 +115,30 @@ position = Vector2(386, 947)
 [node name="Spike2" parent="Spikes" instance=ExtResource("4_hkkj7")]
 position = Vector2(1652, -382)
 
+[node name="Spike3" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(1244, -6627)
+
+[node name="Spike4" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(326, -9938)
+
+[node name="Spike5" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(1400, -15284)
+
+[node name="Spike6" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(545, -11590)
+
+[node name="Spike7" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(496, -17462)
+
+[node name="Spike8" parent="Spikes" instance=ExtResource("4_hkkj7")]
+position = Vector2(1376, -17622)
+
 [node name="Tower" type="Node2D" parent="."]
+
+[node name="Ceiling" parent="Tower" instance=ExtResource("1_haspb")]
+position = Vector2(973, -19087)
+rotation = 1.5708
+scale = Vector2(2, 1.322)
 
 [node name="LeftWall" parent="Tower" instance=ExtResource("1_haspb")]
 position = Vector2(-148, -8888)
@@ -143,3 +179,13 @@ offset_bottom = 1214.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Left click to explode bombs. 'BlowUp' to reach the top! Don't go into the red."
+
+[node name="HighScore" type="RichTextLabel" parent="Instructions"]
+offset_left = 42.0
+offset_top = -19139.0
+offset_right = 2046.0
+offset_bottom = -19068.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Welcome to the Top! Total Bombs Exploded:"
+script = ExtResource("9_oe728")
