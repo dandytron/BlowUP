@@ -21,6 +21,7 @@ script = ExtResource("1_6tvhn")
 
 [node name="ScoreLabel" type="RichTextLabel" parent="GUICanvasLayer"]
 unique_name_in_owner = true
+z_index = 1
 anchors_preset = -1
 anchor_top = -0.0296296
 anchor_bottom = -0.0296296
@@ -28,6 +29,7 @@ offset_left = 60.0
 offset_top = 47.0
 offset_right = 660.0
 offset_bottom = 103.0
+theme_override_colors/font_shadow_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "High Score:
 "
@@ -35,10 +37,12 @@ fit_content = true
 
 [node name="BombsRemaining" type="RichTextLabel" parent="GUICanvasLayer"]
 unique_name_in_owner = true
+z_index = 1
 offset_left = 60.0
 offset_top = 70.0
 offset_right = 260.0
 offset_bottom = 120.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Bombs:"
 script = ExtResource("3_1kvvw")
@@ -110,9 +114,8 @@ scale = Vector2(2, 10)
 
 [node name="Ground" parent="Tower" instance=ExtResource("5_y4gxr")]
 modulate = Color(0.06, 0.06, 0.06, 1)
-z_index = 1
-position = Vector2(1400, 1589)
-scale = Vector2(20, 10)
+position = Vector2(1400, 1606)
+scale = Vector2(20, 10.3)
 
 [node name="WorldBoundries" type="Node2D" parent="."]
 
@@ -135,7 +138,8 @@ shape = SubResource("WorldBoundaryShape2D_3souk")
 [node name="RichTextLabel" type="RichTextLabel" parent="Instructions"]
 offset_left = 50.0
 offset_top = 1151.0
-offset_right = 2050.0
-offset_bottom = 1201.0
-theme_override_font_sizes/normal_font_size = 32
-text = "Left click to explod bombs. 'BlowUp' to reach the top! Don't go into the red."
+offset_right = 2054.0
+offset_bottom = 1214.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Left click to explode bombs. 'BlowUp' to reach the top! Don't go into the red."
