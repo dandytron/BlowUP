@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://nuh2lic3sd55"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_6tvhn"]
+[ext_resource type="Script" uid="uid://4lxayyc7icd3" path="res://scripts/main.gd" id="1_6tvhn"]
 [ext_resource type="PackedScene" uid="uid://nii0ee7sq6rj" path="res://scenes/wall.tscn" id="1_haspb"]
 [ext_resource type="PackedScene" uid="uid://cuk1tj6fqa8sw" path="res://scenes/player.tscn" id="2_8ocxl"]
-[ext_resource type="Script" path="res://scripts/megatron.gd" id="2_pkvq2"]
-[ext_resource type="Script" path="res://scripts/bombs_remaining.gd" id="3_1kvvw"]
+[ext_resource type="Script" uid="uid://cbs1cek6l8m3k" path="res://scripts/megatron.gd" id="2_pkvq2"]
+[ext_resource type="Script" uid="uid://okcpky6kg8m8" path="res://scripts/bombs_remaining.gd" id="3_1kvvw"]
 [ext_resource type="PackedScene" uid="uid://b0pdbuous4qjc" path="res://scenes/spike.tscn" id="4_hkkj7"]
-[ext_resource type="Script" path="res://scripts/explosion_layer.gd" id="4_i8u82"]
+[ext_resource type="Script" uid="uid://chibschpx6kg4" path="res://scripts/explosion_layer.gd" id="4_i8u82"]
 [ext_resource type="PackedScene" uid="uid://dnnm0e0oqa5vp" path="res://scenes/platform.tscn" id="5_y4gxr"]
-[ext_resource type="Script" path="res://scripts/high_score.gd" id="9_oe728"]
+[ext_resource type="Script" uid="uid://clfoamnoffjr3" path="res://scripts/high_score.gd" id="9_oe728"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdaux"]
 normal = Vector2(1, 0)
